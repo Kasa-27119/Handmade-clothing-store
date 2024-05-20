@@ -1,0 +1,37 @@
+/* import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 216, 222);
+    color: rgb(47, 47, 106);
+    font-family: "PT Sans", sans-serif;
+}
+
+.main-text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.main-text-container h1 {
+    color: rgb(238, 119, 83);
+    font-size: 4em;
+    font-weight: 700;
+    margin: 0.2em 0;
+}
+
+.main-text-container p {
+    font-size: 1.2em;
+    margin: 0.1em 0;
+}
+
+/* MEDIA QUERIES - TABLET AND MOBILE */
