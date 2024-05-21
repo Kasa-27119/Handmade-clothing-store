@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: rgb(255, 216, 222);
+    background-color: rgb(255, 230, 239);
     color: rgb(47, 47, 106);
     font-family: "PT Sans", sans-serif;
 }
@@ -18,12 +18,11 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 1.4em;
 }
 
 .main-text-container h1 {
-    color: rgb(238, 119, 83);
+    color: rgb(212, 112, 206);
     font-size: 4em;
     font-weight: 700;
     margin: 0.2em 0;
@@ -33,5 +32,62 @@ body {
     font-size: 1.2em;
     margin: 0.1em 0;
 }
+
+/* main grid and items*/
+#product-card-container {
+    display: grid;
+    /* justify-items: center; */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    padding: 3em 4em;
+}
+
+.clothing-item-card {
+    /* width: 380px; */
+    border-radius: 1em;
+    border: 4px solid #f2d7f5;
+    box-shadow: 4px 4px rgb(229, 155, 213);
+    -webkit-box-shadow: 4px 4px rgb(229, 155, 213);
+    background-color: rgb(255, 236, 243);
+}
+
+.clothing-item-card h2 {
+    font-size: 1.8em;
+    color: rgb(212, 112, 206);
+}
+
+.clothing-items-card p {
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.clothing-item-card h3 {
+    font-size: 1.4em;
+}
+
+/* swiper css */
+.swiper {
+    width: 100%;
+    height: 280px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.clothing-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.clothing-item-details {
+    margin: 1.3em;
+}
+
+
+
+
+
 
 /* MEDIA QUERIES - TABLET AND MOBILE */
