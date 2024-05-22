@@ -14,7 +14,7 @@ const clothingItems = [
         category: "jackets",
         color: "Blue",
         sizes: ["XS", "S", "M", "L"],
-        image: ["https://ae01.alicdn.com/kf/HTB1OEDkNVXXXXXQXVXXq6xXFXXXo/Fashion-Autumn-Winter-Long-Sleeve-Harajuku-Women-Basic-Coat-Bomber-baseball-Jacket-Female-Lady-Outerwear-Clothing.jpg", "https://img.shein.com/images/shein.com/201608/86/14703716870467557609.jpg"],
+        image: ["imgs/bear-baseball-jacket1.jpg", "imgs/bear-baseball-jacket2.jpg"],
     },
     {
         id: 2,
@@ -32,7 +32,7 @@ const clothingItems = [
         category: "tops",
         color: "Blue",
         sizes: ["M", "L", "XL"],
-        image: ["https://i.pinimg.com/originals/66/cb/3c/66cb3c26977009b3b18c655fa4200083.jpg", "https://i.etsystatic.com/14826524/r/il/4abf10/2701465225/il_1140xN.2701465225_eni1.jpg"],
+        image: ["imgs/blue-sweater-1.jpg", "imgs/blue-sweater-2.jpg"],
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const clothingItems = [
         category: "tops",
         color: "Black",
         sizes: ["XS", "S", "M", "L", "XL"],
-        image: ["https://ae01.alicdn.com/kf/HTB1LRSFQFXXXXcTXVXXq6xXFXXXa/Funny-Cat-Tshirt-Harajuku-Cat-Face-Graphic-Tees-Women-T-Shirt-Black-White-Casual-T-shirt.jpg", "https://img1.etsystatic.com/134/1/9196086/il_fullxfull.850402387_ftbg.jpg"],
+        image: ["imgs/cat-black-tee1.jpg", "imgs/cat-black-tee2.jpg"],
     },
     {
         id: 5,
@@ -50,7 +50,7 @@ const clothingItems = [
         category: "tops",
         color: "Mixed",
         sizes: ["XS", "S", "M", "L", "XL"],
-        image: ["https://ae01.alicdn.com/kf/HTB1ENRYhNuTBuNkHFNRq6A9qpXar/JKKUCOCO-Tops-Hot-Tees-Cherry-Print-tee-Cotton-t-shirt-Women-Shirt-Short-Sleeve-O-neck.jpg", "https://i.pinimg.com/originals/6b/a5/84/6ba584f5d3e48402ea2c25baaf667a29.jpg"],
+        image: ["imgs/cherry-tee1.jpg", "imgs/cherry-tee2.jpg"],
     },
     {
         id: 6,
@@ -72,14 +72,139 @@ const clothingItems = [
     },
     {
         id: 8,
-        name: "Flower Denim Jacket",
+        name: "Pattern Denim Jacket",
         price: "$24.99",
         category: "jacket",
         color: "Blue",
         sizes: ["M", "L"],
-        image: ["https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.1hLw37TA_yZS0otbSoRbyQHaHa%26pid%3DApi&f=1&ipt=1b5aef10365e56410501c38f186cd0d4bd654412f4ea0129e597c5e6045fcb2a&ipo=images", "https://www.fashionpumpkin.com/wp-content/uploads/2016/10/embroidered-jacket_svetlana-prodanic_fashion-pumpkin-blog.9jpg-1.jpg"],
+        image: ["imgs/pattern-denim-jacket1.jpg", "imgs/pattern-denim-jacket2.jpg"],
     }
 ]
+
+// getting html elements
+// filter select
+const clothingTypeFilter = document.getElementById("clothing-type");
+const clothingSizeFilter = document.getElementById("size");
+const clothingColorFilter = document.getElementById("color");
+
+// sorting buttons
+const alphabeticalSortButton = document.getElementById("alphabetical-sort");
+const lowToHighSortButton = document.getElementById("price-low-to-high-sort");
+const highToLowSortButton = document.getElementById("price-high-to-low-sort");
+
+// on click (change) function - filter selectors
+clothingTypeFilter.addEventListener("change", function() {
+    console.log("type filter click is working");
+    console.dir(clothingTypeFilter.value);
+    // filter and then populate the product container div - function goes here
+})
+
+clothingSizeFilter.addEventListener("change", function() {
+    console.log("size filter click is working");
+    console.dir(clothingSizeFilter.value);
+    // filter and then populate the product container div - function goes here
+})
+
+clothingColorFilter.addEventListener("change", function() {
+    console.log("color filter click is working");
+    console.dir(clothingColorFilter.value);
+    // filter and then populate the product container div - function goes here
+})
+
+// filter functions
+function filterClothingItems() {
+
+    // return filtered clothing items as an array = filteredClothingItems
+    const filteredClothingItems = clothingItems.filter(clothingItem => {
+
+        // main filter - clothing type
+        // set both filter value and clothing type to be exactly the same - set to both lowercase first
+
+        // clothing item value and property
+        const clothingItemType = clothingItem.category.toLowerCase();
+        const clothingTypeFilterValue = clothingTypeFilter.value.toLowerCase();
+
+        // clothing item size value and property
+        const clothingItemSize = clothingItem.sizes.toLowerCase();
+        const clothingSizeFilterValue = clothingTypeFilter.value.toLowerCase();
+
+        // clothing item color value and property
+        const clothingItemColor = clothingItem.color.toLowerCase();
+        const clothingColorFilterValue = clothingColorFilter.value.toLowerCase();
+
+
+        // if statements - if clothing detail and filter values DON't MATCH
+
+        // if the clothing item type DOESN'T include the filter value - do not add to the array
+        if (clothingTypeFilterValue && !clothingItemType.includes(clothingTypeFilterValue)) {
+
+            return false;
+        }
+
+        // if the item size doesn't include the filter value - do not add to the array
+        if (clothingSizeFilterValue && !clothingItemSize.includes(clothingSizeFilterValue)) {
+            return false;
+        }
+
+        // if the item color doesn't match the filter value  - do not add to the array
+        if (clothingColorFilterValue && !clothingItemColor.includes(clothingColorFilterValue)) {
+            return false;
+        }
+
+        // if all of item properties match the filter value
+        return true;
+   
+    })
+    // and add the to filteredProperties array
+    return filteredClothingItems;
+
+    
+}
+
+// sorting functions
+// sorting alphabetically
+function sortClothingItemsAlphabetical (clothingItems) {
+    return clothingItems.sort((a, b) => {
+        const itemNameA = a.name.toLowerCase();
+        const itemNameB = b.name.toLowerCase();
+
+        return itemNameA.localCompare(itemNameB);
+    })
+}
+
+// sort price low to high
+function sortClothingItemsLowToHigh (clothingItems) {
+    return clothingItems.sort((a, b) => {
+
+        // turning the item price into an integer and removing the dollar sign and decimal
+        const itemPriceA = parseFloat(a.price.replace(/\$/g, "").replace(/./g, ""));
+        const itemPriceB = parseFloat(b.price.replace(/\$/g, "").replace(/./g, ""));
+
+        return itemPriceA - itemPriceB;
+    })
+}
+
+// sort price high to low
+function sortClothingItemsHighToLow (clothingItems) {
+    return clothingItems.sort((a, b) => {
+
+        // turning the item price into an integer and removing the dollar sign and decimal
+        const itemPriceA = parseFloat(a.price.replace(/\$/g, "").replace(/./g, ""));
+        const itemPriceB = parseFloat(b.price.replace(/\$/g, "").replace(/./g, ""));
+
+        return itemPriceB - itemPriceA;
+    })
+}
+
+
+
+
+
+
+
+
+
+
 
 // initial population of cards
 function populateCardContainer (clothingItems) {

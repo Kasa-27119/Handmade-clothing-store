@@ -11,17 +11,86 @@
     <title>My Online Clothing Store</title>
 </head>
 <body>
+    <!-- navbar -->
+    <nav></nav>
+
+    <!-- header for the page -->
+    <header id="clothing-store-header">
+        <h1>My Online Clothing Store</h1>
+    </header>
+
+
     <!-- main text container - for text at the top -->
     <div class="main-text-container">
-        <h1>My Online Clothing Store</h1>
-        <p>This is my Online Clothing Shop. All products are hand-made by me with love and care. <br> Shipping is free inside the US and Canada, international shipping fees apply.</p>
+        <p>Hi! My name is Kathy and welcome to my wonderful clothing store!<br>
+            <br>This business started as a small hobby of mine 10 years ago sewing and knitting for my relatives and pets,<br>and I enjoyed it so much that I set up this shop for all of y'all to enjoy my creations!<br><br>All of my products are hand-made by me with love and care always. <br> Shipping is free inside the US and Canada, and international shipping fees apply.</p>
     </div>
 
     <!-- filter buttons container -->
-    <div id="filter-container"></div>
+    <div id="filter-container">
+        <h3>Filtering Options</h3>
+
+        <!-- clothing type filter -->
+        <div class="filter">
+            <label for="clothing-type">Clothing Type</label>
+            <select name="clothing-type" id="clothing-type">
+
+                <!-- options -->
+                <option value="">All Types</option>
+                <option value="tops">Tops</option>
+                <option value="bottoms">Bottoms</option>
+                <option value="jackets">Jackets</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </div>
+
+        <!-- size filter -->
+        <div class="filter">
+            <label for="size">Size</label>
+            <select name="size" id="size">
+
+                <!-- options -->
+                <option value="">All Sizes</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="ONE-SIZE">ONE SIZE</option>
+            </select>
+        </div>
+
+        <!-- Color filter -->
+        <div class="filter">
+            <label for="color">Color</label>
+            <select name="color" id="color">
+
+                <!-- options -->
+                <option value="">All Colors</option>
+                <option value="Blue">Blue</option>
+                <option value="Black">Black</option>
+                <option value="Green">Green</option>
+                <option value="Pink">Pink</option>
+                <option value="Mixed">Mixed</option>
+            </select>
+        </div>
+
+    </div>
 
     <!-- sorting buttons container -->
-    <div id="sorting-container"></div>
+    <div id="sorting-container">
+        <h3>Sorting Options</h3>
+
+        <!-- sorting button container -->
+        <div class="sorting-btn-container">
+
+            <!-- sorting buttons -->
+            <button class="sorting-btn" id="alphabetical-sort">Alphabetical</button>
+            <button class="sorting-btn" id="price-low-to-high-sort">Price Low to High</button>
+            <button class="sorting-btn" id="price-high-to-low-sort">Price High to Low</button>
+        </div>
+
+    </div>
 
     <!-- clothing products container - dynamically populated by JS -->
     <div id="product-card-container">
