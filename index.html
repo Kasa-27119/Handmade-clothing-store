@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- mapbox css -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/> 
+
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     
@@ -12,67 +16,76 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav></nav>
+    <nav>
+        <div class="nav-content-container">
+
+            <div class="nav-logo">
+                <h5>AdoreeEco</h5>
+            </div>
+
+            <div class="navlinks-container">
+                <a href="#">Shop</a>
+                <a href="#">Mission</a>
+                <a href="#">Blog</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- header for the page -->
     <header id="clothing-store-header">
-        <h1>My Online Clothing Store</h1>
+        <h1> AdoreeEco Clothing</h1>
     </header>
-
-
-    <!-- main text container - for text at the top -->
-    <div class="main-text-container">
-        <p>Hi! My name is Kathy and welcome to my wonderful clothing store!<br>
-            <br>This business started as a small hobby of mine 10 years ago sewing and knitting for my relatives and pets,<br>and I enjoyed it so much that I set up this shop for all of y'all to enjoy my creations!<br><br>All of my products are hand-made by me with love and care always. <br> Shipping is free inside the US and Canada, and international shipping fees apply.</p>
-    </div>
 
     <!-- filter buttons container -->
     <div id="filter-container">
         <h3>Filtering Options</h3>
 
-        <!-- clothing type filter -->
-        <div class="filter">
-            <label for="clothing-type">Clothing Type</label>
-            <select name="clothing-type" id="clothing-type">
+        <div class="filter-button-container">
 
-                <!-- options -->
-                <option value="">All Types</option>
-                <option value="tops">Tops</option>
-                <option value="bottoms">Bottoms</option>
-                <option value="jackets">Jackets</option>
-                <option value="accessories">Accessories</option>
-            </select>
-        </div>
+            <!-- clothing type filter -->
+            <div class="filter">
+                <label for="clothing-type">Clothing Type</label>
+                <select name="clothing-type" id="clothing-type">
 
-        <!-- size filter -->
-        <div class="filter">
-            <label for="size">Size</label>
-            <select name="size" id="size">
+                    <!-- options -->
+                    <option value="">All Types</option>
+                    <option value="tops">Tops</option>
+                    <option value="bottoms">Bottoms</option>
+                    <option value="jackets">Jackets</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+            </div>
 
-                <!-- options -->
-                <option value="">All Sizes</option>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="ONE-SIZE">ONE SIZE</option>
-            </select>
-        </div>
+            <!-- size filter -->
+            <div class="filter">
+                <label for="size">Size</label>
+                <select name="size" id="size">
 
-        <!-- Color filter -->
-        <div class="filter">
-            <label for="color">Color</label>
-            <select name="color" id="color">
+                    <!-- options -->
+                    <option value="">All Sizes</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="ONE-SIZE">ONE SIZE</option>
+                </select>
+            </div>
 
-                <!-- options -->
-                <option value="">All Colors</option>
-                <option value="Blue">Blue</option>
-                <option value="Black">Black</option>
-                <option value="Green">Green</option>
-                <option value="Pink">Pink</option>
-                <option value="Mixed">Mixed</option>
-            </select>
+            <!-- Color filter -->
+            <div class="filter">
+                <label for="color">Color</label>
+                <select name="color" id="color">
+
+                    <!-- options -->
+                    <option value="">All Colors</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Black">Black</option>
+                    <option value="Green">Green</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Mixed">Mixed</option>
+                </select>
+            </div>
         </div>
 
     </div>
@@ -86,23 +99,30 @@
 
             <!-- sorting buttons -->
             <button class="sorting-btn" id="alphabetical-sort">Alphabetical</button>
-            <button class="sorting-btn" id="price-low-to-high-sort">Price Low to High</button>
-            <button class="sorting-btn" id="price-high-to-low-sort">Price High to Low</button>
+            <button class="sorting-btn" id="price-low-to-high-sort">$ - $$$</button>
+            <button class="sorting-btn" id="price-high-to-low-sort">$$$ - $</button>
         </div>
 
     </div>
+
+    <h2 class="clothing-items-h2">Clothing Items</h2>
 
     <!-- clothing products container - dynamically populated by JS -->
     <div id="product-card-container">
         <!-- populated by js -->
     </div>
 
-    <div id="mapbox"></div>
+    <section id="map-section">
+        <h2>Our Location</h2>
+
+        <div id="map"></div>
+
+        <!-- <div id="custom-marker-1"></div> -->
+    </section>
     <!-- i still need the mapbox js key and css -->
 
-
-    
     <!-- mapbox js -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 
     <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

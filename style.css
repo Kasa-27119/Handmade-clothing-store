@@ -1,12 +1,6 @@
 /* import google fonts */
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-/* colour palette */
-/* light blue: #8edce6
-med pink: #ff499e
-off white: #f5edf0
-med magenta: #d264b6
-lavender: a480cf */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 /* css reset */
 * {
@@ -16,33 +10,73 @@ lavender: a480cf */
 }
 
 body {
-    background-color: #f3fbff;
+    background-color: #ffffff;
     color: #03090b;
-    font-family: "PT Sans", sans-serif;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
 }
 
 /* navbar */
 nav {
-    height: 4em;
-    background-color: rgb(44, 144, 164);
+    height: 5.4em;
+    background-color: rgb(255, 85, 165);
+}
+
+.nav-content-container {
+    width: 100%;
+    height: 100%;
+    padding: 0.8em 1.7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navlinks-container {
+    display: flex;
+    gap: 4em;
+}
+
+.navlinks-container a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    transition: all 0.3 ease;
+}
+
+.nav-logo {
+    font-size: 2.7em;
+    color: #ffffff;
+    font-family: "Outfit", sans-serif;
+
+    transition: all 0.3 ease;
+}
+
+.nav-logo:hover, .navlinks-container a:hover {
+    scale: 1.1;
+    transition: all 0.3 ease;
 }
 
 /* clothing store header */
 #clothing-store-header {
     width: 100%;
-    height: 55vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(./imgs/sewing-header1.webp);
+    background-image: linear-gradient(rgba(31, 65, 114, 0.5), rgba(107, 38, 77, 0.5)), url(./imgs/header1.jpg);
     background-position: center;
     background-size: cover;
+    border: 3px solid #ffffff;
 }
 
 #clothing-store-header h1 {
+    font-family: "Outfit", sans-serif;
     color: rgb(249, 252, 252);
-    -webkit-text-stroke: 2px  rgb(187, 62, 78);
-    font-size: 4.6em;
+    /* text-shadow: 5px 5px #03090b; */
+    font-size: 7.5em;
     font-weight: 700;
     margin: 0.2em 0;
 }
@@ -66,15 +100,31 @@ nav {
 /* filter container and filters */
 #filter-container {
     width: 100%;
-    background-color: #0b1a1e;
+    background-color: #33658A;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 1em 0 2em 0;
-    gap: 3em;
+    align-items: center;
+    padding: 2em 0 2em 0;
+}
+
+#filter-container h3 {
+    font-size: 2em;
 }
 
 #filter-container label, #filter-container h3, #sorting-container h3 {
     color: #f3fbff;
+    font-family: "Outfit", sans-serif;
+}
+
+#sorting-container h3 {
+    font-size: 2em;
+}
+
+.filter-button-container {
+    display: flex;
+    gap: 3em;
+    margin-top: 2em;
 }
 
 .filter {
@@ -84,25 +134,30 @@ nav {
 
 .filter label {
     margin-bottom: 0.6em;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: 700;
 }
 
 select {
     border: 2px ;
-    width: 10em;
+    width: 100%;
     padding: 0.2em;
-    border: 2px solid #d74343;
-    font-size: 1em;
-    font-family: "PT Sans", sans-serif;
-    border-radius: 0.4em;
+    border: 2px solid rgb(255, 85, 165);
+    font-size: 1.1em;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    transition: all 0.3 ease;
+}
+
+select:hover {
+    background-color: #faf4f7;
+    transition: all 0.3 ease;
 }
 
 /* sorting main container and sort buttons */
 #sorting-container {
     width: 100%;
-    /* height: 8em; */
-    background-color: #0b1a1e;
+    background-color: #33658A;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,26 +165,43 @@ select {
     padding: 1em 0 2em 0;
 }
 
+
+
 .sorting-btn-container {
     gap: 3em;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .sorting-btn {
     border: 2px ;
     width: 10em;
-    padding: 0.2em;
-    border: 2px solid #d74343;
-    background-color: rgb(231, 106, 129);
-    font-size: 1em;
-    font-family: "PT Sans", sans-serif;
+    padding: 0.3em 0.6em;
+    border: 2px solid #DE6B48;
+    background-color: rgb(255, 85, 165);
+    font-size: 1.1em;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
     border-radius: 0.9em;
     margin: 0 1.5em;
     color: #f3fbff;
+    transition: all 0.3s ease;
+}
+
+.sorting-btn:hover {
+    scale: 1.08;
+    background-color: rgb(252, 124, 184);
+    transition: all 0.3s ease;
 }
 
 
 /* main grid and items*/
+.clothing-items-h2 {
+    font-size: 4em;
+    color: #33658A;
+    text-align: center;
+    margin-top: 0.8em;
+}
+
 #product-card-container {
     display: grid;
     /* justify-items: center; */
@@ -139,17 +211,24 @@ select {
 }
 
 .clothing-item-card {
-    /* width: 380px; */
-    border-radius: 1em;
-    border: 4px solid #f2d7f5;
-    box-shadow: 4px 4px rgb(229, 155, 213);
-    -webkit-box-shadow: 4px 4px rgb(229, 155, 213);
-    background-color: rgb(255, 236, 243);
+    border: 2px solid rgb(255, 85, 165);
+    background-color: #f8f3f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em 0;
+    transition: all 0.3s ease;
+}
+
+.clothing-item-card:hover {
+    scale: 1.05;
+    background-color: #fff1f8;
+    transition: all 0.3s ease;
 }
 
 .clothing-item-card h2 {
     font-size: 1.8em;
-    color: rgb(212, 112, 206);
+    color: rgb(255, 85, 165);
 }
 
 .clothing-items-card p {
@@ -159,14 +238,40 @@ select {
 
 .clothing-item-card h3 {
     font-size: 1.4em;
+    color: rgb(255, 85, 165);
+}
+
+.clothing-item-sizes-color {
+    margin-top: 0.6em;
+}
+
+.clothing-item-sizes-color p {
+    font-size: 1.2em;
+    line-height: 1.4em;
 }
 
 /* swiper css */
 .swiper {
-    width: 100%;
+    width: 90%;
     height: 280px;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border: 1px solid #33658A;
+    /* border-top-left-radius: 1em;
+    border-top-right-radius: 1em; */
+}
+
+.swiper-pagination {
+    background: rgba(248, 243, 246, 1);
+    backdrop-filter: blur(10px);
+    border-radius: 1.2em;
+    padding: 0.3em;
+    border: 1px solid rgb(255, 85, 165);
+}
+
+.swiper-pagination-bullet {
+    background-color: rgb(255, 85, 165);
+    border: 1px solid rgb(255, 85, 165);
+    width: 10px;
+    height: 10px;
 }
 
 .clothing-item-image {
@@ -174,16 +279,175 @@ select {
     height: 100%;
     object-fit: cover;
     object-position: center;
-
 }
 
 .clothing-item-details {
-    margin: 1.3em;
+    margin: 1em;
 }
 
+/* mapbox and details */
 
+#map-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4em;
+}
 
+#map-section h2 {
+    font-size: 4em;
+    color: #33658A;
+    margin-bottom: 0.5em;
+}
 
+#map {
+    width: 95%;
+    height: 500px;
+    border: 3px solid rgb(255, 85, 165);
+}
 
+#custom-marker-1 {
+    /* background-image: url(./imgs/map-marker1.png); */
+    /* background-color: rgb(255, 85, 165); */
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /* MEDIA QUERIES - TABLET AND MOBILE */
+/* media queries - tablet: 768px*/
+
+@media screen and (max-width: 768px) {
+
+    #clothing-store-header {
+        height: 50vh;
+    }
+
+    #clothing-store-header h1 {
+        font-size: 4.5em;
+    }
+
+    #filter-container {
+        padding-top: 1em;
+    }
+
+    .filter label {
+        font-size: 1.6em;
+    }
+
+    select {
+        font-size: 1.3em;
+    }
+
+    .sorting-btn {
+        width: auto;
+        padding: 0.3em 1em;
+        margin: 0 1.3em;
+        font-size: 1.3em;
+    }
+
+    #product-card-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2.2em;
+    }
+
+    .swiper-pagination {
+        border-radius: 1.2em;
+        padding: 0.4em;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 13px;
+        height: 13px;
+    }
+
+    #map {
+        height: 350px;
+    }
+
+    .clothing-items-h2, #map-section h2 {
+        font-size: 3.5em;
+    }
+    
+}
+
+/* media queries mobile: 620px*/
+@media screen and (max-width: 620px) {
+    nav {
+        height: 5em
+    }
+
+    .nav-logo {
+        font-size: 2.3em;
+    }
+
+    .navlinks-container {
+        gap: 1.8em;
+    }
+
+    #clothing-store-header {
+        height: 45vh;
+    }
+
+    #clothing-store-header h1 {
+        font-size: 3.4em;
+    }
+
+    .sorting-btn {
+        width: auto;
+        padding: 0.3em 0.8em;
+        margin: 0 1em;
+    }
+
+    #product-card-container {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2.8em;
+    }
+    
+    .clothing-item-card {
+        padding: 1.8em 0;
+    }
+
+    .clothing-item-details {
+        margin-top: 1.8em;
+    }
+
+    .clothing-item-details h2 {
+        font-size: 2.5em;
+    }
+
+    .clothing-item-details h3 {
+        font-size: 2.2em;
+    }
+
+    .clothing-item-details p {
+        font-size: 1.4em;
+    }
+
+    .swiper {
+        height: 480px;
+    }
+
+    .swiper-pagination {
+        border-radius: 1.2em;
+        padding: 0.5em;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+
+
+}
+
